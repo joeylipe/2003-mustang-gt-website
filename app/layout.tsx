@@ -7,7 +7,7 @@ const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans' })
 const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' })
 
 export const metadata: Metadata = {
-  title: '2003 Ford Mustang GT — Interactive Model Guide',
+  title: '2003 Ford Mustang GT — Enthusiast Reference',
   description:
     'An enthusiast reference for the 2003 Ford Mustang GT: factory specifications, exterior colors, options, and an interactive explorer for the 4.6L SOHC 2-valve V8.',
   generator: 'v0.app',

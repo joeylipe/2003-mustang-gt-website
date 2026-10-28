@@ -397,7 +397,8 @@ export const sources: Source[] = [
   },
   {
     title: '2003 Ford Mustang sales brochure',
-    publisher: 'Ford Motor Company',
+    publisher: 'Ford Motor Company (US-market scan via Internet Archive)',
+    url: 'https://archive.org/details/ford-mustang-car-brochure-2003',
     usedFor: 'Trim levels, standard vs. optional equipment, and color availability.',
   },
   {
