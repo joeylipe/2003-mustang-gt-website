@@ -13,7 +13,19 @@ export function MaintenanceSection() {
           title="Maintenance Basics"
           description="Basic reference values only. Anything not confirmed for this guide — torque values, part numbers, and intervals — is deliberately left out rather than guessed. Always defer to the 2003 Mustang owner’s guide and Ford service information."
         />
-        <div className="overflow-x-auto rounded-lg border border-border bg-card">
+        <ul className="divide-y divide-border rounded-lg border border-border bg-card md:hidden">
+          {maintenanceRows.map((row) => (
+            <li key={row.item} className="flex flex-col gap-2 p-4">
+              <div className="flex items-start justify-between gap-3">
+                <p className="font-medium">{row.item}</p>
+                <ConfidenceBadge confidence={row.confidence} />
+              </div>
+              <p className="font-mono text-sm break-words">{row.value}</p>
+              <p className="text-sm leading-relaxed text-muted-foreground">{row.note}</p>
+            </li>
+          ))}
+        </ul>
+        <div className="hidden overflow-x-auto rounded-lg border border-border bg-card md:block">
           <table className="w-full min-w-[640px] text-left text-sm">
             <caption className="sr-only">Maintenance reference values for the 2003 Mustang GT</caption>
             <thead className="border-b border-border font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
