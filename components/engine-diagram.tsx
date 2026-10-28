@@ -60,8 +60,11 @@ function Bank({ rotate, props }: { rotate: number; props: DiagramProps }) {
       </Part>
 
       <Part id="exhaust-manifolds" props={props}>
-        <rect x={298} y={194} width={44} height={26} rx={5} {...shape} />
-        <rect x={298} y={216} width={20} height={46} rx={4} {...shape} />
+        {/* Exhaust ports exit the outboard side of each head, so mirror the manifold on the +45° bank to keep it out of the valley. */}
+        <g transform={rotate > 0 ? 'translate(800 0) scale(-1 1)' : undefined}>
+          <rect x={298} y={194} width={44} height={26} rx={5} {...shape} />
+          <rect x={298} y={216} width={20} height={46} rx={4} {...shape} />
+        </g>
       </Part>
 
       <Part id="connecting-rods" props={props}>
