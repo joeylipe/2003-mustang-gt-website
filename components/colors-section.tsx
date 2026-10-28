@@ -26,40 +26,46 @@ export function ColorsSection() {
         />
 
         <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
-          <div className="overflow-hidden rounded-lg border border-border bg-card">
-            <div className="relative aspect-[16/9]">
+          <div className="sticky top-16 z-10 min-w-0 self-start overflow-hidden rounded-lg border border-border bg-card shadow-lg shadow-background/60 lg:static lg:z-auto lg:self-auto lg:shadow-none">
+            <div className="relative aspect-[3/1] sm:aspect-[16/9]">
               <div
                 className="absolute inset-0 transition-[background] duration-300"
                 style={{ background: panelBackground }}
                 role="img"
                 aria-label={`${selected.name} paint swatch`}
               >
-                <p className="absolute bottom-3 left-3 rounded-sm bg-background/85 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+                <p className="absolute bottom-2 left-2 right-2 w-fit rounded-sm bg-background/85 px-2 py-1 font-mono text-[9px] uppercase tracking-wider text-muted-foreground sm:bottom-3 sm:left-3 sm:right-auto sm:text-[10px]">
                   Visual approximation — not an exact match for the factory finish
                 </p>
               </div>
             </div>
-            <div className="flex flex-wrap items-center justify-between gap-4 border-t border-border p-5" aria-live="polite">
-              <div className="flex items-center gap-4">
+            <div
+              className="flex flex-wrap items-center justify-between gap-3 border-t border-border p-3 sm:gap-4 sm:p-5"
+              aria-live="polite"
+            >
+              <div className="flex min-w-0 flex-1 basis-0 items-center gap-3 sm:flex-none sm:basis-auto sm:gap-4">
                 <span
                   aria-hidden="true"
-                  className="size-12 rounded-md border border-white/15"
+                  className="size-10 shrink-0 rounded-md border border-white/15 sm:size-12"
                   style={{ background: panelBackground }}
                 />
-                <div>
-                  <p className="text-xl font-bold">{selected.name}</p>
-                  <p className="text-sm text-muted-foreground">{selected.finish} finish</p>
+                <div className="min-w-0">
+                  <p className="text-base font-bold leading-tight sm:text-xl">{selected.name}</p>
+                  <p className="text-xs text-muted-foreground sm:text-sm">{selected.finish} finish</p>
                 </div>
               </div>
-              <div className="text-right">
-                <p className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground">Ford paint code</p>
-                <p className="font-mono text-2xl font-bold">{selected.code ?? '—'}</p>
+              <div className="shrink-0 text-right">
+                <p className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground sm:text-[11px]">
+                  <span className="sm:hidden">Paint code</span>
+                  <span className="hidden sm:inline">Ford paint code</span>
+                </p>
+                <p className="font-mono text-xl font-bold sm:text-2xl">{selected.code ?? '—'}</p>
               </div>
               {selected.note ? <p className="w-full text-sm text-warning">{selected.note}</p> : null}
             </div>
           </div>
 
-          <div>
+          <div className="min-w-0">
             <fieldset>
               <legend className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
                 {paintColors.length} GT colors
@@ -74,17 +80,20 @@ export function ColorsSection() {
                       aria-pressed={isActive}
                       onClick={() => setSelectedName(color.name)}
                       className={cn(
-                        'flex items-center gap-3 rounded-md border bg-card p-2.5 text-left transition-colors',
-                        isActive ? 'border-primary ring-1 ring-primary' : 'border-border hover:border-foreground/30',
+                        'flex min-h-14 min-w-0 items-center gap-2.5 rounded-md border bg-card p-2.5 text-left transition-colors sm:gap-3',
+                        isActive ? 'border-primary bg-primary/10 ring-1 ring-primary' : 'border-border hover:border-foreground/30',
                       )}
                     >
                       <span
                         aria-hidden="true"
-                        className="size-8 shrink-0 rounded-sm border border-white/15"
+                        className={cn(
+                          'size-8 shrink-0 rounded-sm border border-white/15',
+                          isActive && 'ring-2 ring-primary ring-offset-2 ring-offset-card',
+                        )}
                         style={{ backgroundColor: color.hex }}
                       />
                       <span className="min-w-0">
-                        <span className="block truncate text-sm font-medium">{color.name}</span>
+                        <span className="block text-sm font-medium leading-snug break-words lg:truncate">{color.name}</span>
                         <span className="block font-mono text-[11px] text-muted-foreground">{color.code ?? 'Code n/a'}</span>
                       </span>
                     </button>
