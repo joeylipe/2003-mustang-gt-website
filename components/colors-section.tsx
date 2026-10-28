@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { useState } from 'react'
 import { notGtColors, paintColors } from '@/lib/mustang-data'
 import { cn } from '@/lib/utils'
@@ -29,27 +28,16 @@ export function ColorsSection() {
         <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
           <div className="overflow-hidden rounded-lg border border-border bg-card">
             <div className="relative aspect-[16/9]">
-              {selected.image ? (
-                <Image
-                  key={selected.image.src}
-                  src={selected.image.src}
-                  alt={selected.image.alt}
-                  fill
-                  sizes="(min-width: 1024px) 60vw, 100vw"
-                  className="object-cover"
-                />
-              ) : (
-                <div className="absolute inset-0" style={{ background: panelBackground }} role="img" aria-label={`${selected.name} paint swatch`}>
-                  <p className="absolute bottom-3 left-3 rounded-sm bg-background/85 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
-                    No reference image for this color — swatch only
-                  </p>
-                </div>
-              )}
-              {selected.image ? (
-                <p className="absolute right-3 top-3 rounded-sm bg-background/85 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
-                  AI-generated representative image
+              <div
+                className="absolute inset-0 transition-[background] duration-300"
+                style={{ background: panelBackground }}
+                role="img"
+                aria-label={`${selected.name} paint swatch`}
+              >
+                <p className="absolute bottom-3 left-3 rounded-sm bg-background/85 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+                  Visual approximation — not an exact match for the factory finish
                 </p>
-              ) : null}
+              </div>
             </div>
             <div className="flex flex-wrap items-center justify-between gap-4 border-t border-border p-5" aria-live="polite">
               <div className="flex items-center gap-4">

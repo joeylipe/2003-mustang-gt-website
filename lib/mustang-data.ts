@@ -67,36 +67,14 @@ export type PaintColor = {
   code: string | null
   hex: string
   finish: 'Solid' | 'Metallic'
-  image?: { src: string; alt: string }
   note?: string
 }
 
 export const paintColors: PaintColor[] = [
-  {
-    name: 'Torch Red',
-    code: 'D3',
-    hex: '#c4161c',
-    finish: 'Solid',
-    image: { src: '/images/hero-torch-red.png', alt: 'Representative illustration of a Torch Red 2003 Mustang GT coupe' },
-  },
+  { name: 'Torch Red', code: 'D3', hex: '#c4161c', finish: 'Solid' },
   { name: 'Redfire Metallic', code: 'G2', hex: '#7a1b22', finish: 'Metallic' },
-  {
-    name: 'Zinc Yellow',
-    code: 'B7',
-    hex: '#f0c419',
-    finish: 'Solid',
-    image: { src: '/images/gallery-zinc-yellow-coupe.png', alt: 'Representative illustration of a Zinc Yellow 2003 Mustang GT coupe' },
-  },
-  {
-    name: 'Sonic Blue Metallic',
-    code: 'SN',
-    hex: '#2f68b0',
-    finish: 'Metallic',
-    image: {
-      src: '/images/gallery-sonic-blue-convertible.png',
-      alt: 'Representative illustration of a Sonic Blue Metallic 2003 Mustang GT convertible',
-    },
-  },
+  { name: 'Zinc Yellow', code: 'B7', hex: '#f0c419', finish: 'Solid' },
+  { name: 'Sonic Blue Metallic', code: 'SN', hex: '#2f68b0', finish: 'Metallic' },
   { name: 'True Blue Metallic', code: 'L2', hex: '#1c2d66', finish: 'Metallic' },
   {
     name: 'Tropic Green Metallic',
@@ -107,20 +85,8 @@ export const paintColors: PaintColor[] = [
   },
   { name: 'Silver Metallic', code: 'YN', hex: '#b5b9bd', finish: 'Metallic' },
   { name: 'Dark Shadow Grey Metallic', code: 'CX', hex: '#474a50', finish: 'Metallic' },
-  {
-    name: 'Black',
-    code: 'UA',
-    hex: '#0d0d0f',
-    finish: 'Solid',
-    image: { src: '/images/gallery-black-coupe.png', alt: 'Representative illustration of a Black 2003 Mustang GT coupe' },
-  },
-  {
-    name: 'Oxford White',
-    code: 'Z1',
-    hex: '#f1f1ec',
-    finish: 'Solid',
-    image: { src: '/images/gallery-oxford-white-coupe.png', alt: 'Representative illustration of an Oxford White 2003 Mustang GT coupe' },
-  },
+  { name: 'Black', code: 'UA', hex: '#0d0d0f', finish: 'Solid' },
+  { name: 'Oxford White', code: 'Z1', hex: '#f1f1ec', finish: 'Solid' },
 ]
 
 export const notGtColors = [
@@ -414,19 +380,17 @@ export const maintenanceRows: MaintenanceRow[] = [
   },
 ]
 
-export type GalleryImage = { src: string; alt: string; caption: string }
+export type GalleryImage = { src: string; alt: string; caption: string; credit: string }
 
-export const galleryImages: GalleryImage[] = [
-  { src: '/images/hero-torch-red.png', alt: 'Torch Red 2003 Mustang GT coupe, front three-quarter view', caption: 'Coupe — Torch Red' },
-  { src: '/images/gallery-black-coupe.png', alt: 'Black 2003 Mustang GT coupe, side profile', caption: 'Coupe — Black' },
-  {
-    src: '/images/gallery-sonic-blue-convertible.png',
-    alt: 'Sonic Blue Metallic 2003 Mustang GT convertible with top down',
-    caption: 'Convertible — Sonic Blue Metallic',
-  },
-  { src: '/images/gallery-zinc-yellow-coupe.png', alt: 'Zinc Yellow 2003 Mustang GT coupe', caption: 'Coupe — Zinc Yellow' },
-  { src: '/images/gallery-oxford-white-coupe.png', alt: 'Oxford White 2003 Mustang GT coupe', caption: 'Coupe — Oxford White' },
-  { src: '/images/gallery-engine-bay.png', alt: '4.6L SOHC 2-valve V8 engine bay', caption: 'Engine bay — 4.6L 2V V8' },
+export const galleryImages: GalleryImage[] = []
+
+export const galleryPlaceholders: { caption: string; suggestion: string }[] = [
+  { caption: 'Coupe — front three-quarter', suggestion: 'Exterior shot of a 2003 GT coupe' },
+  { caption: 'Coupe — side profile', suggestion: 'Profile showing GT wheels and side scoops' },
+  { caption: 'Convertible', suggestion: 'A 2003 GT convertible, top up or down' },
+  { caption: 'Rear view', suggestion: 'Rear spoiler, badging, and dual exhaust tips' },
+  { caption: 'Interior', suggestion: 'Dashboard, gauges, and seats' },
+  { caption: 'Engine bay — 4.6L 2V V8', suggestion: 'Under-hood view of the SOHC V8' },
 ]
 
 export type Source = { title: string; publisher: string; url?: string; usedFor: string }
