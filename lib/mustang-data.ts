@@ -380,19 +380,6 @@ export const maintenanceRows: MaintenanceRow[] = [
   },
 ]
 
-export type GalleryImage = { src: string; alt: string; caption: string; credit: string }
-
-export const galleryImages: GalleryImage[] = []
-
-export const galleryPlaceholders: { caption: string; suggestion: string }[] = [
-  { caption: 'Coupe — front three-quarter', suggestion: 'Exterior shot of a 2003 GT coupe' },
-  { caption: 'Coupe — side profile', suggestion: 'Profile showing GT wheels and side scoops' },
-  { caption: 'Convertible', suggestion: 'A 2003 GT convertible, top up or down' },
-  { caption: 'Rear view', suggestion: 'Rear spoiler, badging, and dual exhaust tips' },
-  { caption: 'Interior', suggestion: 'Dashboard, gauges, and seats' },
-  { caption: 'Engine bay — 4.6L 2V V8', suggestion: 'Under-hood view of the SOHC V8' },
-]
-
 export type Source = { title: string; publisher: string; url?: string; usedFor: string }
 
 export const sources: Source[] = [

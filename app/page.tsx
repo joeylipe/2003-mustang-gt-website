@@ -2,7 +2,7 @@ import { ColorsSection } from '@/components/colors-section'
 import { EngineExplorer } from '@/components/engine-explorer'
 import { Hero } from '@/components/hero'
 import { OptionsSection } from '@/components/options-section'
-import { GallerySection, MaintenanceSection, SourcesSection } from '@/components/reference-sections'
+import { MaintenanceSection, SourcesSection } from '@/components/reference-sections'
 import { SiteNav } from '@/components/site-nav'
 import { SpecsSection } from '@/components/specs-section'
 import { SystemsSection } from '@/components/systems-section'
@@ -19,7 +19,6 @@ export default function Page() {
         <EngineExplorer />
         <SystemsSection />
         <MaintenanceSection />
-        <GallerySection />
         <SourcesSection />
       </main>
       <footer className="border-t border-border">

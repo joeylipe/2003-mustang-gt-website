@@ -10,7 +10,6 @@ const links = [
   { href: '#engine', label: 'Engine Explorer' },
   { href: '#systems', label: 'Systems' },
   { href: '#maintenance', label: 'Maintenance' },
-  { href: '#gallery', label: 'Gallery' },
   { href: '#sources', label: 'Sources' },
 ]
 
