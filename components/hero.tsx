@@ -20,7 +20,7 @@ export function Hero() {
           className="h-[62vh] min-h-[420px] w-full object-cover object-center md:h-[78vh]"
         />
         <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
-        <p className="absolute right-3 top-3 rounded-sm bg-background/80 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+        <p className="absolute right-3 top-3 rounded-sm bg-background/80 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-muted-foreground opacity-75">
           AI-generated representative image
         </p>
       </div>
