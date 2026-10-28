@@ -10,7 +10,6 @@ const links = [
   { href: '#engine', label: 'Engine Explorer' },
   { href: '#systems', label: 'Systems' },
   { href: '#maintenance', label: 'Maintenance' },
-  { href: '#gallery', label: 'Gallery' },
   { href: '#sources', label: 'Sources' },
 ]
 
@@ -23,7 +22,6 @@ export function SiteNav() {
         <a href="#top" className="flex items-baseline gap-2 font-bold uppercase tracking-tight">
           <span className="font-mono text-sm text-primary">{"'03"}</span>
           <span>Mustang GT</span>
-          <span className="hidden font-mono text-xs font-normal text-muted-foreground sm:inline">Model Guide</span>
         </a>
 
         <ul className="hidden items-center gap-1 lg:flex">

@@ -50,10 +50,15 @@ function Part({ id, children, props }: { id: string; children: ReactNode; props:
 
 const shape = { fill: 'var(--pf)', stroke: 'var(--ps)', strokeWidth: 2 }
 
-/** One cylinder bank drawn pointing straight up from the crank center (400,440), then rotated ±45° into the V. */
+/**
+ * One cylinder bank drawn pointing straight up from the crank center (400,440), then rotated ±45° into the V.
+ * In this local frame −x is the outboard (exhaust) side and +x is the valley (intake) side. The two heads are
+ * mirror images, so the +45° bank is mirrored before rotating to keep every part on its correct side.
+ */
 function Bank({ rotate, props }: { rotate: number; props: DiagramProps }) {
+  const mirror = rotate > 0 ? ' translate(800 0) scale(-1 1)' : ''
   return (
-    <g transform={`rotate(${rotate} 400 440)`}>
+    <g transform={`rotate(${rotate} 400 440)${mirror}`}>
       <Part id="engine-block" props={props}>
         <rect x={345} y={224} width={110} height={178} rx={6} {...shape} />
         <rect x={362} y={228} width={76} height={150} fill="#000" fillOpacity={0.28} stroke="none" />

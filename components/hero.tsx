@@ -26,15 +26,15 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto -mt-48 max-w-7xl px-4 pb-16 md:-mt-64 md:px-6">
-        <p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-primary">Interactive Model Guide · SN95 New Edge</p>
+        <p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-primary">Enthusiast Reference</p>
         <h1 id="hero-title" className="text-balance text-5xl font-black uppercase leading-[0.95] tracking-tight md:text-7xl lg:text-8xl">
           2003 Ford
           <br />
           Mustang GT
         </h1>
         <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
-          An enthusiast reference for the 2003 Mustang GT — its factory specifications, paint colors, and equipment, plus an
-          interactive look inside the 4.6-liter SOHC 2-valve V8 that powers it.
+          A reference for 2003 Mustang GT enthusiasts covering factory specifications, paint colors, equipment, and
+          maintenance. It also includes tools for exploring the 4.6-liter SOHC 2-valve V8 and its systems.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <a

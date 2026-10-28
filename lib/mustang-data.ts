@@ -76,13 +76,7 @@ export const paintColors: PaintColor[] = [
   { name: 'Zinc Yellow', code: 'B7', hex: '#f0c419', finish: 'Solid' },
   { name: 'Sonic Blue Metallic', code: 'SN', hex: '#2f68b0', finish: 'Metallic' },
   { name: 'True Blue Metallic', code: 'L2', hex: '#1c2d66', finish: 'Metallic' },
-  {
-    name: 'Tropic Green Metallic',
-    code: null,
-    hex: '#1e4a3b',
-    finish: 'Metallic',
-    note: 'Paint code not verified for this guide — check the door-jamb certification label.',
-  },
+  { name: 'Tropic Green Metallic', code: 'SU', hex: '#1e4a3b', finish: 'Metallic' },
   { name: 'Silver Metallic', code: 'YN', hex: '#b5b9bd', finish: 'Metallic' },
   { name: 'Dark Shadow Grey Metallic', code: 'CX', hex: '#474a50', finish: 'Metallic' },
   { name: 'Black', code: 'UA', hex: '#0d0d0f', finish: 'Solid' },
@@ -380,19 +374,6 @@ export const maintenanceRows: MaintenanceRow[] = [
   },
 ]
 
-export type GalleryImage = { src: string; alt: string; caption: string; credit: string }
-
-export const galleryImages: GalleryImage[] = []
-
-export const galleryPlaceholders: { caption: string; suggestion: string }[] = [
-  { caption: 'Coupe — front three-quarter', suggestion: 'Exterior shot of a 2003 GT coupe' },
-  { caption: 'Coupe — side profile', suggestion: 'Profile showing GT wheels and side scoops' },
-  { caption: 'Convertible', suggestion: 'A 2003 GT convertible, top up or down' },
-  { caption: 'Rear view', suggestion: 'Rear spoiler, badging, and dual exhaust tips' },
-  { caption: 'Interior', suggestion: 'Dashboard, gauges, and seats' },
-  { caption: 'Engine bay — 4.6L 2V V8', suggestion: 'Under-hood view of the SOHC V8' },
-]
-
 export type Source = { title: string; publisher: string; url?: string; usedFor: string }
 
 export const sources: Source[] = [
@@ -410,7 +391,8 @@ export const sources: Source[] = [
   },
   {
     title: '2003 Ford Mustang sales brochure',
-    publisher: 'Ford Motor Company',
+    publisher: 'Ford Motor Company (US-market scan via Internet Archive)',
+    url: 'https://archive.org/details/ford-mustang-car-brochure-2003',
     usedFor: 'Trim levels, standard vs. optional equipment, and color availability.',
   },
   {

@@ -1,7 +1,5 @@
 import { ExternalLink } from 'lucide-react'
-import Image from 'next/image'
-import { ImagePlus } from 'lucide-react'
-import { galleryImages, galleryPlaceholders, maintenanceRows, sources } from '@/lib/mustang-data'
+import { maintenanceRows, sources } from '@/lib/mustang-data'
 import { ConfidenceBadge, SectionHeader } from './section-header'
 
 export function MaintenanceSection() {
@@ -45,66 +43,13 @@ export function MaintenanceSection() {
   )
 }
 
-export function GallerySection() {
-  return (
-    <section aria-labelledby="gallery-title" id="gallery" className="mx-auto max-w-7xl px-4 py-20 md:px-6">
-      <SectionHeader
-        id="gallery-title"
-        index="07"
-        eyebrow="Visuals"
-        title="Gallery"
-        description="Reserved for genuine photographs of 2003 Mustang GT models. Each slot below can be filled with an authentic photo once its source and usage rights are confirmed."
-      />
-      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {galleryPlaceholders.map((slot) => (
-          <li key={slot.caption}>
-            <figure className="overflow-hidden rounded-lg border border-border bg-card">
-              <div className="relative flex aspect-[4/3] flex-col items-center justify-center gap-3 border-b border-dashed border-border bg-muted/30 p-6 text-center">
-                <ImagePlus aria-hidden="true" className="size-8 text-muted-foreground" />
-                <p className="text-sm font-medium">Authentic photo goes here</p>
-                <p className="max-w-[16rem] text-xs leading-relaxed text-muted-foreground">
-                  {slot.suggestion}. Add the file to <code className="font-mono">/public/images/gallery/</code> with its
-                  source and license credit.
-                </p>
-              </div>
-              <figcaption className="flex items-center justify-between gap-3 px-4 py-3 text-sm">
-                <span>{slot.caption}</span>
-                <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">Placeholder</span>
-              </figcaption>
-            </figure>
-          </li>
-        ))}
-        {galleryImages.map((image) => (
-          <li key={image.src}>
-            <figure className="overflow-hidden rounded-lg border border-border bg-card">
-              <div className="relative aspect-[4/3]">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <figcaption className="flex items-center justify-between gap-3 px-4 py-3 text-sm">
-                <span>{image.caption}</span>
-                <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">{image.credit}</span>
-              </figcaption>
-            </figure>
-          </li>
-        ))}
-      </ul>
-    </section>
-  )
-}
-
 export function SourcesSection() {
   return (
-    <section aria-labelledby="sources-title" id="sources" className="border-t border-border bg-card/40">
+    <section aria-labelledby="sources-title" id="sources">
       <div className="mx-auto max-w-7xl px-4 py-20 md:px-6">
         <SectionHeader
           id="sources-title"
-          index="08"
+          index="07"
           eyebrow="References"
           title="Sources & Verification"
           description="This guide compiles widely published references. Values marked “check source” should be confirmed against these documents — especially Ford’s own owner’s guide, brochure, and workshop manual — before being relied on."
